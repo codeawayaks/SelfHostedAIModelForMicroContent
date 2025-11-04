@@ -58,8 +58,8 @@ This guide will walk you through deploying Phi-2 and Mistral 7B models on Runpod
 You can test the endpoints using the Runpod.io API or OpenAI-compatible client:
 
 ```bash
-curl -X POST "https://api.runpod.ai/v2/{64yjvxs0r1pw28}/openai/v1/chat/completions" \
-  -H "Authorization: Bearer rpa_T30AWJO29W7E66P3DQLEHMPXNXAOUA5QVIRYQZQH1k582b
+curl -X POST "https://api.runpod.ai/v2/{your_pod_endpoint_id_here}/openai/v1/chat/completions" \
+  -H "Authorization: Bearer {api_key}
 " \
   -H "Content-Type: application/json" \
   -d '{
@@ -68,24 +68,7 @@ curl -X POST "https://api.runpod.ai/v2/{64yjvxs0r1pw28}/openai/v1/chat/completio
     "max_tokens": 100
   }'
 
-curl -X POST "https://api.runpod.ai/v2/{8cr70b9l2e85a2}/openai/v1/chat/completions" \
-  -H "Authorization: Bearer rpa_T30AWJO29W7E66P3DQLEHMPXNXAOUA5QVIRYQZQH1k582b
-" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "microsoft/Phi-2",
-    "messages": [{"role": "user", "content": "Hello, world!"}],
-    "max_tokens": 100
-  }'
-curl -X POST https://api.runpod.ai/v2/64yjvxs0r1pw28/run \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer rpa_T30AWJO29W7E66P3DQLEHMPXNXAOUA5QVIRYQZQH1k582b' \
-    -d '{"input":{"prompt":"Tell me about yourself in 10 words"}}
-curl -X POST https://api.runpod.ai/v2/8cr70b9l2e85a2/run \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer rpa_T30AWJO29W7E66P3DQLEHMPXNXAOUA5QVIRYQZQH1k582b' \
-    -d '{"input":{"prompt":"Tell me about yourself in 10 words"}}
-```
+
 
 ## Step 5: Configure Application
 
